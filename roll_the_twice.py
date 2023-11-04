@@ -1,24 +1,20 @@
 import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
-from config import TOKEN
 import random as rm
 
 # Объект бота
-bot = Bot(token=TOKEN)
+bot = Bot(token="6889676098:AAHLpvRj4wX13DtDTjtT8zfJrrYV-kN5gBs")
 # Диспетчер
 dp = Dispatcher()
 
 # Хэндлер на команду /start
 @dp.message(Command("start"))
 async def start(message: types.Message):
-    await bot.send_sticker(message.from_user.id, sticker="CAACAgIAAxkBAAEKm85lOXwF6uvk4rmKcExKjAsynwN7WgACpRAAArRFoEpqI1qAWc6jRzAE")
-
-
-# Хэндлер на команду /echo
-@dp.message(Command("echo"))
-async def cmd_test1(message: types.Message):
-    await message.answer(text=message.text + ", GIT GUT, MATE")
+    await bot.send_sticker(
+        message.from_user.id,
+        sticker="CAACAgIAAxkBAAEKm85lOXwF6uvk4rmKcExKjAsynwN7WgACpRAAArRFoEpqI1qAWc6jRzAE"
+    )
 
 
 # Хэндлер на команду /d
@@ -46,8 +42,8 @@ async def cmd_roll_dice(message: types.Message):
 
 # Хэндлер на команду /re
 @dp.message(Command("help"))
-async def cmd_echo(message: types.Message):
-    await message.reply(text="/help - help\n/d - roll the dice\n/echo - echo\n/start - cool sticker\nno command - echoV1")
+async def cmd_help(message: types.Message):
+    await message.answer(text="/help - help\n/d - roll the dice\n/echo - echo\n/start - cool sticker\nno command - echoV1")
 
 
 @dp.message()
@@ -57,7 +53,8 @@ async def echo_message(message: types.Message):
 
 # Запуск процесса поллинга новых апдейтов
 async def main():
-    await dp.start_polling(bot, on_startup=start, skip_updates=True, )
+    await dp.start_polling(bot, on_startup=cmd_help, skip_updates=True)
+    await start()
 
 
 if __name__ == "__main__":

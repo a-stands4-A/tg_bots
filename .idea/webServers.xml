@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="45448aa5-c9a9-40dd-bf4d-31d83d465592" name="roll_the_twice">
+        <fileTransfer rootFolder="/root/dnd_bot" accessType="SFTP" host="176.57.218.63" port="22" sshConfigId="68b3494a-971b-4cf3-bf9c-ffd954267d47" sshConfig="root@176.57.218.63:22">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
