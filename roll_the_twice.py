@@ -4,7 +4,7 @@ from aiogram.filters.command import Command
 import random as rm
 
 # Объект бота
-bot = Bot(token="6889676098:AAHLpvRj4wX13DtDTjtT8zfJrrYV-kN5gBs")
+bot = Bot(token="********************************************************")
 # Диспетчер
 dp = Dispatcher()
 
